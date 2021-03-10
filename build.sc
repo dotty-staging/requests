@@ -6,7 +6,7 @@ val dottyVersion = Option(sys.props("dottyVersion"))
 
 object requests extends Cross[RequestsModule]((List("2.12.6", "2.13.0", "3.0.0-RC1") ++ dottyVersion): _*)
 class RequestsModule(val crossScalaVersion: String) extends CrossScalaModule with PublishModule {
-  def publishVersion = "0.6.5"
+  def publishVersion = "cb-SNAPSHOT" // hardcoded version for the community build
   def artifactName = "requests"
   def pomSettings = PomSettings(
     description = "Scala port of the popular Python Requests HTTP client",
@@ -19,12 +19,12 @@ class RequestsModule(val crossScalaVersion: String) extends CrossScalaModule wit
     )
   )
   def ivyDeps = Agg(
-    ivy"com.lihaoyi::geny::0.6.5"
+    ivy"com.lihaoyi::geny::cb-SNAPSHOT"
   )
   object test extends Tests{
     def ivyDeps = Agg(
-      ivy"com.lihaoyi::utest::0.7.7",
-      ivy"com.lihaoyi::ujson::1.2.3"
+      ivy"com.lihaoyi::utest::cb-SNAPSHOT",
+      ivy"com.lihaoyi::ujson::cb-SNAPSHOT"
     )
     def testFrameworks = Seq("utest.runner.Framework")
   }
