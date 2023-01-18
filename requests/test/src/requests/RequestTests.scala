@@ -137,7 +137,7 @@ object RequestTests extends TestSuite{
         intercept[TimeoutException] {
           requests.get("https://httpbin.org/delay/1", readTimeout = 10)
         }
-        requests.get("https://httpbin.org/delay/1", readTimeout = 2000)
+        requests.get("https://httpbin.org/delay/1", readTimeout = 3000) // increased timeout due to timeouts when running on dotty community build
         intercept[TimeoutException] {
           requests.get("https://httpbin.org/delay/3", readTimeout = 2000)
         }
