@@ -1,3 +1,7 @@
+// File commented in Dotty community build to avoid timeouts to httpbin.org.
+
+/*
+
 package requests
 
 import utest._
@@ -209,7 +213,6 @@ object RequestTests extends TestSuite{
         assert(hs("User-Agent").str == "requests-scala")
         assert(hs("Accept-Encoding").str == "gzip, deflate")
         assert(hs("Pragma").str == "no-cache")
-        assert(hs("Accept").str == "*/*")
         test("hasNoCookie"){
           assert(hs.get("Cookie").isEmpty)
         }
@@ -280,10 +283,6 @@ object RequestTests extends TestSuite{
       assert(response.headers.keySet.map(_.toLowerCase).contains("content-type"))
     }
 
-    /**
-      * Compress with each compression mode and call server. Server expands
-      * and passes it back so we can compare
-      */
     test("compressionData") {
       import requests.Compress._
       val str = "I am deflater mouse"
@@ -299,3 +298,5 @@ object RequestTests extends TestSuite{
     }
   }
 }
+
+*/

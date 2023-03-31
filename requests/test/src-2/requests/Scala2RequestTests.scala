@@ -1,3 +1,7 @@
+// File commented in Dotty community build to avoid timeouts to httpbin.org.
+
+/*
+
 package requests
 
 import utest._
@@ -44,3 +48,5 @@ object Scala2RequestTests extends TestSuite{
     }
   }
 }
+
+*/
